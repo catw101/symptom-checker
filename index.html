@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--Catelen Wu-->
+<html>
+	<head>
+		<title></title>		
+		<script src = "datafile.js"></script>
+		<link rel = "stylesheet" href = "index.css">
+		<script>
+			function initialize()
+			{
+				bodyparts = bodyparts.split(";");
+				symptoms = theSymptoms.split(";");
+				eachSymptoms = theSymptoms.split(",");
+				conditions = conditions.split(";");
+				websites = websites.split(";");
+				list = [];
+				for (var i = 0; i < bodyparts.length; i++)
+				{
+					part = {};
+					part.name = bodyparts[i];
+					part.symptom = symptoms[i];
+					part.condition = conditions[i];
+					part.website = websites[i];
+					
+					list.push(part);
+				}
+				
+				intro = document.getElementById("intro");
+				intro.style.display = "block";
+			}
+			
+			function getData(num)
+			{
+				intro.style.display = "none";
+				document.getElementById("conditions").innerHTML = "";
+				document.getElementById("name").innerHTML = list[num].name;
+				eachSymptom = list[num].symptom.split(",");
+				
+				info = eachSymptom[0];
+				info2 = eachSymptom[1];
+				obj = num;
+				
+				document.getElementById("info").innerHTML = info;
+				document.getElementById("info").addEventListener("click", getConditions);
+				document.getElementById("info2").innerHTML = info2;
+				document.getElementById("info2").addEventListener("click", getConditions2);
+			}
+			
+			function getConditions()
+			{
+				document.getElementById("conditions").innerHTML = "";
+				symptomConditions = list[obj].condition.split("-");
+				symptomConditions = symptomConditions[0];
+				symptomConditions = symptomConditions.split(",");
+				symptomWebsites = list[obj].website.split(",");
+				for (var i = 0; i < symptomConditions.length; i++)
+				{
+					links = symptomConditions[i].link(symptomWebsites[i]) + "<br/>";
+					document.getElementById("conditions").innerHTML += links;
+				}
+			}
+			
+			function getConditions2()
+			{
+				document.getElementById("conditions").innerHTML = "";
+				symptomConditions2 = list[obj].condition.split("-");
+				symptomConditions2 = symptomConditions2[1].split(",");
+				symptomWebsites2 = list[obj].website.split("()");
+				symptomWebsites2 = symptomWebsites2[1].split(",");
+				for (var i = 0; i < symptomConditions2.length; i++)
+				{
+					links = symptomConditions2[i].link(symptomWebsites2[i]) + "<br/>";
+					document.getElementById("conditions").innerHTML += links;
+				}
+			}
+		</script>	
+	</head>
+	
+	<body onload = "initialize();">
+		<div id = "title">WELCOME TO THE BODY MAP.</div>
+		<div id = "intro">Click anywhere on the body to begin.</div>
+		<div class = "content">
+			<img id = "body_img" src = "body.jpg" usemap = "#body"/>
+			<p id = "name"></p>
+			<div id = "info"></div>
+			<div id = "info2"></div>
+			<div id = "conditions"></div>
+		</div>
+		
+		<map name = "body">
+			<area shape = "rect" coords = "73,10,173,74" alt = "Head" onclick = "getData(0);">
+			<area shape = "rect" coords = "84,85,169,155" alt = "Chest" onclick = "getData(1);">
+			<area shape = "rect" coords = "11,89,73,308" alt = "Arm" onclick = "getData(2);">
+			<area shape = "rect" coords = "254,84,183,300" alt = "Arm" onclick = "getData(2);">
+			<area shape = "rect" coords = "79,273,189,485" alt = "Leg" onclick = "getData(3);">
+			<area shape = "rect" coords = "87,165,171,229" alt = "Stomach" onclick = "getData(4);">
+		</map>
+		
+	</body>
+</html>

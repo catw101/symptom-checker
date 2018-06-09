@@ -1,0 +1,7 @@
+bodyparts = "Head;Chest;Arms;Legs;Stomach";
+
+theSymptoms = "Fever, Throbbing;Tightness, Tenderness;Swelling, Numbness;Cramp, Calf Pain; Diarrhea, Abdominal Cramps";
+
+conditions = "Common Cold, Flu-Migraine, Fibromyalgia Headache;Myocarditis, Angina-Costochondritis;Blood Clot-Carpal Tunnel Syndrome;Mineral Deficiency, Multiple Sclerosis-Shin Splints; Food Poisoning-Appendicitis"; 
+ 
+websites = "https://www.mayoclinic.org/diseases-conditions/common-cold/symptoms-causes/syc-20351605,https://www.webmd.com/cold-and-flu/default.htm()https://www.mayoclinic.org/diseases-conditions/migraine-headache/symptoms-causes/syc-20360201,http://www.headache-help.org/fibromyalgia-and-chronic-headache;https://www.webmd.com/heart-disease/myocarditis,https://www.belmarrahealth.com/angina-elderly-causes-symptoms-complications/()https://www.webmd.com/pain-management/costochondritis;https://www.healthline.com/health/blood-clot-in-arm#symptoms()https://orthoinfo.aaos.org/en/diseases--conditions/carpal-tunnel-syndrome/;https://www.healthline.com/health/mineral-deficiency,https://www.webmd.com/multiple-sclerosis/default.htm()https://www.webmd.com/fitness-exercise/shin-splints;https://www.webmd.com/food-recipes/food-poisoning/understanding-food-poisoning-symptoms()https://www.webmd.com/digestive-disorders/digestive-diseases-appendicitis";

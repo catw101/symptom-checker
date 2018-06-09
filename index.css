@@ -1,0 +1,44 @@
+#center {
+	text-align: center;
+
+	}
+body {
+	font-family: Garamond;
+}
+#title {
+	text-align: center;
+	font-size: 300%;
+}
+p {
+	font-size: 200%;
+}
+#info:hover, #info2:hover {
+	font-weight: bold;
+	cursor: pointer;
+}
+#info, #info2 {
+	font-size: 150%;
+	padding: 2%;
+}
+.content {
+	width: 400px;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.content img {
+	margin-right: 15px;
+	float: left;
+}
+a {
+	color: gray;
+	text-decoration: none;
+}
+a:hover {
+	font-weight: bold;
+}
+#intro {
+	font-size: 150%;
+	font-weight: bold;
+	text-align: center;
+}
